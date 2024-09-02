@@ -5,18 +5,18 @@ function TileList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    let p = fetch("/annonces.json");
-    p.then(function (s) {
-      console.log("oui", s);
-      let pjson = s.json();
-      console.log(2, pjson);
-      pjson.then(function (lejson) {
-        console.log(3, lejson);
-      });
-    });
-    console.log(p);
+    // let p = fetch("/annonces.json");
+    // p.then(function (s) {
+    //   console.log("oui", s);
+    //   let pjson = s.json();
+    //   console.log(2, pjson);
+    //   pjson.then(function (lejson) {
+    //     console.log(3, lejson);
+    //   });
+    // });
+    // console.log(p);
 
-    fetch("/annonces.json")
+    fetch("public/annonces.json")
       .then((response) => response.json())
       .then((data) => setItems(data))
       .catch((error) =>
