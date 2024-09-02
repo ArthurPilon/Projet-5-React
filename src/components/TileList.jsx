@@ -16,7 +16,7 @@ function TileList() {
     // });
     // console.log(p);
 
-    fetch("public/annonces.json")
+    fetch("/annonces.json")
       .then((response) => response.json())
       .then((data) => setItems(data))
       .catch((error) =>
