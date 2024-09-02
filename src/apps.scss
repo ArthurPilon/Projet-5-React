@@ -1,0 +1,164 @@
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  max-width: 1140px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 30px 0px 30px;
+
+  #logo {
+    img {
+      height: 70%;
+    }
+  }
+
+  #navigation {
+    nav {
+      font-family: "Montserrat";
+      font-size: 18px;
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      link {
+        border-bottom: 2px solid transparent;
+        text-decoration: none;
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        border-bottom: 1px solid black;
+      }
+      a:active {
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
+
+#banner {
+  display: flex;
+  color: white;
+  background-color: grey;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  width: 90%;
+  height: 180px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  h1 {
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+#img-galery {
+  display: flex;
+  background-color: #f6f7f6;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  padding-top: 40px;
+  margin-bottom: 50px;
+
+  .tile-list {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .tilepic {
+    border-radius: 15px;
+    margin-bottom: 40px;
+    height: 340px;
+    flex-basis: calc(33.33% - 60px);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+      z-index: 1;
+    }
+
+    .title-content {
+      position: absolute;
+      bottom: 10px;
+      left: 20px;
+      z-index: 2;
+      color: white;
+
+      h3 {
+        font-weight: 700;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Masquer les éléments après le 6ème
+  .tilepic:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 209px;
+  padding-top: 100px;
+  gap: 30px;
+  img {
+    width: 122px;
+    height: 39.44px;
+  }
+}
