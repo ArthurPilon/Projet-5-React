@@ -162,3 +162,29 @@ footer {
     height: 39.44px;
   }
 }
+
+// A propos
+
+#collapsenav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .collapse-container {
+    width: 90%;
+    align-items: center;
+    .collapse-content {
+      background-color: #fbfafa;
+      padding-left: 10px;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      color: white;
+      background-color: #ff6060;
+      border-radius: 4px;
+      height: 40px;
+      padding-left: 10px;
+    }
+  }
+}
