@@ -6,7 +6,7 @@ export default function Erorr() {
     <>
       <Header />
 
-      <div>
+      <div className="error404">
         <h1>
           <span>404</span>
         </h1>
