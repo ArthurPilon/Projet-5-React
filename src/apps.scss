@@ -208,4 +208,19 @@ footer {
   flex-direction: column;
   align-items: center;
   color: #ff6060;
+  h1 {
+    font-size: 200px;
+    margin: 60px 0px;
+  }
+  h2 {
+    font-weight: 200;
+  }
+  #errorlink {
+    text-decoration: none;
+    padding: 100px 0px;
+  }
+  a {
+    // text-decoration: none; /* Enlève le soulignement */
+    color: black;
+  }
 }
