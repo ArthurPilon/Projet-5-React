@@ -98,13 +98,15 @@ header {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    a {
+      flex-basis: calc(33.33% - 60px);
+    }
   }
 
   .tilepic {
     border-radius: 15px;
     margin-bottom: 40px;
     height: 340px;
-    flex-basis: calc(33.33% - 60px);
     overflow: hidden;
     position: relative;
 
@@ -143,7 +145,7 @@ header {
   }
 
   // Masquer les éléments après le 6ème
-  .tilepic:nth-child(n + 7) {
+  .tile-list a:nth-child(n + 7) {
     display: none;
   }
 }
@@ -169,36 +171,47 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  .collapse-container {
-    width: 90%;
-    align-items: center;
-    margin-bottom: 25px;
-    .collapse-title {
-      display: flex;
-      background-color: #ff6060;
-      align-items: center;
-      color: white;
-      border-radius: 4px;
-      height: 40px;
-      padding-left: 10px;
-      padding-right: 10px;
-      justify-content: space-between;
-      .arrowcollapse {
-        cursor: pointer;
-        transition: transform 0.5s ease;
-      }
-      .arrowcollapse.open {
-        transform: rotate(-180deg);
-      }
-    }
-    .collapse-content {
-      background-color: #fbfafa;
-      padding: 20px 10px;
-    }
 
-    h3 {
-      display: flex;
+  h3 {
+    display: flex;
+  }
+}
+
+.collapse-container {
+  width: 90%;
+  align-items: center;
+  margin-bottom: 25px;
+  .collapse-title {
+    display: flex;
+    background-color: #ff6060;
+    align-items: center;
+    color: white;
+    border-radius: 4px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    .arrowcollapse {
+      cursor: pointer;
+      transition: transform 0.5s ease;
     }
+    .arrowcollapse.open {
+      transform: rotate(-180deg);
+    }
+  }
+  .collapse-content {
+    background-color: #fbfafa;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    border-radius: 5px;
+  }
+  .collapse-content.open {
+    opacity: 1;
+    display: block;
+    max-height: 500px;
+    padding: 20px 10px;
   }
 }
 
@@ -210,7 +223,7 @@ footer {
   color: #ff6060;
   h1 {
     font-size: 200px;
-    margin: 60px 0px;
+    margin: 100px 0px 60px 0px;
   }
   h2 {
     font-weight: 200;
@@ -222,5 +235,103 @@ footer {
   a {
     // text-decoration: none; /* Enlève le soulignement */
     color: black;
+  }
+}
+
+#logement {
+  .cover {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .title-host {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #hostnamepic {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+
+      #logement-name-text {
+        display: flex;
+      }
+
+      img {
+        width: 65px;
+        border-radius: 50%;
+      }
+      span {
+        color: #ff6060;
+        display: flex;
+        flex-direction: column;
+        width: 98px;
+        align-self: baseline;
+        text-align: right;
+        align-self: auto;
+        font-size: 19px;
+      }
+    }
+
+    h1 {
+      font-weight: 500;
+      color: #ff6060;
+    }
+  }
+
+  #logement-description {
+    p {
+      margin: 0px;
+      position: relative;
+      bottom: 20px;
+    }
+  }
+
+  #tags-rating {
+    display: flex;
+    justify-content: space-between;
+    #tags {
+      display: flex;
+      gap: 15px;
+
+      h2 {
+        font-size: 15px;
+        font-weight: 600;
+        background-color: #ff6060;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  #logement-collapse {
+    display: flex;
+    justify-content: space-between;
+
+    .collapse-container {
+      width: 47%;
+
+      .collapse-content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  #rating {
+    display: flex;
+    // width: 15%;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 }

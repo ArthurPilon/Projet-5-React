@@ -7,7 +7,7 @@ export default function Header() {
       <header>
         <div id="logo">
           <Link to="/">
-            <img src="src/assets/icons/LOGOlogokasa .png" alt="Logo Kasa" />
+            <img src="../src/assets/icons/LOGOlogokasa.png" alt="Logo Kasa" />
           </Link>
         </div>
         <div id="navigation">

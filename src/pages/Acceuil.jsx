@@ -18,7 +18,6 @@ export default function Accueil() {
         </Banner>
 
         <div id="img-galery">
-          {/* Appel de TileList pour générer les tuiles automatiquement */}
           <TileList />
         </div>
       </div>

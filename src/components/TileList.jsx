@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Tilepic from "./Tilepic";
+import { Link } from "react-router-dom";
 
 function TileList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // let p = fetch("/annonces.json");
-    // p.then(function (s) {
-    //   console.log("oui", s);
-    //   let pjson = s.json();
-    //   console.log(2, pjson);
-    //   pjson.then(function (lejson) {
-    //     console.log(3, lejson);
-    //   });
-    // });
-    // console.log(p);
-
     fetch("/annonces.json")
       .then((response) => response.json())
-      .then((data) => setItems(data))
+      .then((data) => {
+        console.log(data);
+
+        setItems(data);
+      })
       .catch((error) =>
         console.error("Erreur de chargement des annonces:", error)
       );
@@ -27,12 +21,14 @@ function TileList() {
   return (
     <div className="tile-list">
       {items.map((item) => (
-        <Tilepic
-          key={item.id}
-          title={item.title}
-          cover={item.cover}
-          id={item.id}
-        />
+        <Link to={`/logement/${item.id}`}>
+          <Tilepic
+            key={item.id}
+            title={item.title}
+            cover={item.cover}
+            id={item.id}
+          />
+        </Link>
       ))}
     </div>
   );

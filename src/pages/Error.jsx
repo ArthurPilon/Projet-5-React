@@ -1,23 +1,12 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { Link } from "react-router-dom";
+import Errorloader from "../components/Errorloader";
 
 export default function Erorr() {
   return (
     <>
       <Header />
-
-      <div className="error404">
-        <h1>
-          <span>404</span>
-        </h1>
-        <h2>Oups! La page que vous demandez n'existe pas.</h2>
-        <div id="errorlink">
-          <Link to="/">
-            <p>Retouner sur la page d'acceuil</p>
-          </Link>
-        </div>
-      </div>
+      <Errorloader />
       <Footer />
     </>
   );

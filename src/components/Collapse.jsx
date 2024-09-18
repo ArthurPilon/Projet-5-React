@@ -26,7 +26,9 @@ export default function Collapse({ title, content }) {
           />
         </svg>
       </div>
-      {isOpen && <div className="collapse-content">{content}</div>}
+      <div className={`collapse-content ${isOpen ? "open" : ""}`}>
+        <p>{content}</p>
+      </div>
     </div>
   );
 }

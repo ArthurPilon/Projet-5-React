@@ -5,7 +5,10 @@ export default function Footer() {
   return (
     <>
       <footer id="footer">
-        <img src="src/assets/icons/LOGOfooterwhite.png" alt="logo blanc Kasa" />
+        <img
+          src="../src/assets/icons/LOGOfooterwhite.png"
+          alt="logo blanc Kasa"
+        />
         <p>© 2020 Kasa. All rights reserved</p>
       </footer>
     </>
