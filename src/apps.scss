@@ -201,17 +201,22 @@ footer {
   }
   .collapse-content {
     background-color: #fbfafa;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
+    max-height: 0; // On commence à 0 pour l'état fermé
+    opacity: 0; // On cache visuellement l'élément
+    overflow: hidden; // Empêche tout dépassement quand l'élément est fermé
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    padding: 0 10px; // Pas de padding quand fermé
     border-radius: 5px;
   }
+
   .collapse-content.open {
-    opacity: 1;
-    display: block;
-    max-height: 500px;
-    padding: 20px 10px;
+    max-height: 500px; // Valeur max pour la transition
+    opacity: 1; // Rendre visible l'élément
+    padding: 5px 10px; // Ajouter du padding quand ouvert
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
   }
 }
 
@@ -239,6 +244,8 @@ footer {
 }
 
 #logement {
+  margin: 0 3%;
+
   .cover {
     height: 400px;
     object-fit: cover;

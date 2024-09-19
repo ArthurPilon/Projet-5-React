@@ -27,7 +27,16 @@ export default function Collapse({ title, content }) {
         </svg>
       </div>
       <div className={`collapse-content ${isOpen ? "open" : ""}`}>
-        <p>{content}</p>
+        {/* Si le contenu est un tableau, on le transforme en <li>, sinon on l'affiche simplement en paragraphe */}
+        {Array.isArray(content) ? (
+          <ul>
+            {content.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{content}</p>
+        )}
       </div>
     </div>
   );
