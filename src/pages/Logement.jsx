@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Carousel from "../components/Carousel";
 import { useNavigate, useParams } from "react-router-dom";
 import Collapse from "../components/Collapse";
 
@@ -39,6 +40,7 @@ export default function Logement() {
         // Si l'indice est inférieur ou égal au rating, étoile pleine
         stars.push(
           <svg
+            key={"star" + i}
             width="24.75"
             height="24"
             viewBox="0 0 25 24"
@@ -55,6 +57,7 @@ export default function Logement() {
         // étoile grise
         stars.push(
           <svg
+            key={"star" + i}
             width="24.75"
             height="24"
             viewBox="0 0 25 24"
@@ -78,7 +81,8 @@ export default function Logement() {
         <Header />
 
         <div id="logement">
-          <img src={logement.cover} alt={logement.title} className="cover" />
+          {/* <img src={logement.cover} alt={logement.title} className="cover" /> */}
+          <Carousel pictures={logement.pictures} />
           <div className="title-host">
             <h1>{logement.title}</h1>
             <div id="hostnamepic">

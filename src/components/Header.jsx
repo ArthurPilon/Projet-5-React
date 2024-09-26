@@ -12,12 +12,20 @@ export default function Header() {
         </div>
         <div id="navigation">
           <nav>
-            <ul>
+            <ul id="headernavdesktop">
               <li>
                 <Link to="/">Accueil</Link>
               </li>
               <li>
-                <Link to="/about">À propos</Link>
+                <Link to="/about">A propos</Link>
+              </li>
+            </ul>
+            <ul id="headernavmobile">
+              <li>
+                <Link to="/">ACCEUIL</Link>
+              </li>
+              <li>
+                <Link to="/about">A PROPOS</Link>
               </li>
             </ul>
           </nav>
