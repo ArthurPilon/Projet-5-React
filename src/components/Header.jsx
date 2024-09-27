@@ -21,7 +21,7 @@ export default function Header() {
               </li>
             </ul>
             <ul id="headernavmobile">
-              <li>
+              <li id="homenavmobile">
                 <Link to="/">ACCEUIL</Link>
               </li>
               <li>

@@ -97,12 +97,25 @@ header {
   margin-bottom: 50px;
 
   .tile-list {
-    justify-content: space-evenly;
+    justify-content: flex-start;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 99%;
+    column-gap: 3%;
+    margin: auto;
     a {
-      flex-basis: calc(33.33% - 60px);
+      // flex-basis: calc(33.33% - 60px);
+
+      // flex-basis: calc(33.33% - 2%);
+
+      width: 30%;
+
+      min-width: 340px;
+    }
+
+    .tile-list a:nth-last-child(1):nth-child(3n + 1),
+    .tile-list a:nth-last-child(2):nth-child(3n + 1) {
+      margin-right: auto; /* Empêche les deux dernières tuiles d'être centrées */
     }
   }
 
@@ -148,9 +161,9 @@ header {
   }
 
   // Masquer les éléments après le 6ème
-  .tile-list a:nth-child(n + 22) {
-    display: none;
-  }
+  // .tile-list a:nth-child(n + 7) {
+  //   display: none;
+  // }
 }
 
 footer {
@@ -454,6 +467,7 @@ ul {
     flex-direction: column;
   }
   #img-galery {
+    background-color: white;
     .tilepic {
       height: 255px;
       margin-bottom: 15px;
