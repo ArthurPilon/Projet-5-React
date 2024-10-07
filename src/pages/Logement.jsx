@@ -85,7 +85,7 @@ export default function Logement() {
           <Carousel pictures={logement.pictures} />
           <div className="title-host">
             <h1>{logement.title}</h1>
-            <div id="hostnamepic">
+            <div id="hostnamepicdesktop">
               <div>
                 <span>{logement.host.name}</span>
               </div>
@@ -100,9 +100,17 @@ export default function Logement() {
               {logement.tags &&
                 logement.tags.map((tag, index) => <h2 key={index}>{tag}</h2>)}
             </div>
-            <div id="rating">
-              <div>{renderStars(logement.rating)}</div>{" "}
-              {/* Appeler la fonction pour afficher les étoiles */}
+            <div id="ratingshost">
+              <div id="rating">
+                <div>{renderStars(logement.rating)}</div>{" "}
+                {/* Appeler la fonction pour afficher les étoiles */}
+              </div>
+              <div id="hostnamepicmobile">
+                <div>
+                  <span>{logement.host.name}</span>
+                </div>
+                <img src={logement.host.picture} alt={logement.host.name} />
+              </div>
             </div>
           </div>
           <div id="logement-collapse">

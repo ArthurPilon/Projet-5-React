@@ -21,7 +21,7 @@ function TileList() {
   return (
     <div className="tile-list">
       {items.map((item) => (
-        <Link to={`/logement/${item.id}`}>
+        <Link to={`/logement/${item.id}`} key={item.id}>
           <Tilepic
             key={item.id}
             title={item.title}
