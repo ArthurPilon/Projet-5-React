@@ -103,19 +103,20 @@ header {
     width: 99%;
     column-gap: 3%;
     margin: auto;
+
     a {
       // flex-basis: calc(33.33% - 60px);
 
       // flex-basis: calc(33.33% - 2%);
 
-      width: 30%;
+      width: 30%; /* breakpoint */
 
       min-width: 340px;
     }
 
     .tile-list a:nth-last-child(1):nth-child(3n + 1),
     .tile-list a:nth-last-child(2):nth-child(3n + 1) {
-      margin-right: auto; /* Empêche les deux dernières tuiles d'être centrées */
+      margin-right: auto;
     }
   }
 
@@ -217,18 +218,18 @@ footer {
   }
   .collapse-content {
     background-color: #fbfafa;
-    max-height: 0; // On commence à 0 pour l'état fermé
-    opacity: 0; // On cache visuellement l'élément
-    overflow: hidden; // Empêche tout dépassement quand l'élément est fermé
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
     transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
-    padding: 0 10px; // Pas de padding quand fermé
+    padding: 0 10px;
     border-radius: 5px;
   }
 
   .collapse-content.open {
-    max-height: 500px; // Valeur max pour la transition
-    opacity: 1; // Rendre visible l'élément
-    padding: 5px 10px; // Ajouter du padding quand ouvert
+    max-height: 500px;
+    opacity: 1;
+    padding: 5px 10px;
   }
 }
 ul {
@@ -254,7 +255,7 @@ ul {
     padding: 100px 0px;
   }
   a {
-    // text-decoration: none; /* Enlève le soulignement */
+    // text-decoration: none;
     color: black;
   }
 }
@@ -273,8 +274,8 @@ ul {
     height: 415px;
     width: 100%;
     border-radius: 30px;
-    position: relative; /* Pour placer les éléments relatifs à ce conteneur */
-    overflow: hidden; /* Empêche le débordement des éléments au-delà du conteneur */
+    position: relative;
+    overflow: hidden;
 
     .carousel-slide {
       height: 100%;
@@ -322,7 +323,7 @@ ul {
   }
 
   .carousel-wrapper {
-    display: flex; /* Utiliser flex pour aligner les éléments */
+    display: flex;
     height: 100%;
     width: 100%;
   }
@@ -444,6 +445,89 @@ ul {
 }
 
 /****** Media queries ***********/
+
+/* Breakpoint tile-list */
+@media (max-width: 1136px) {
+  #img-galery {
+    display: flex;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    padding-top: 40px;
+    margin-bottom: 50px;
+
+    .tile-list {
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      width: 99%;
+      column-gap: 3%;
+      margin: auto;
+
+      a {
+        // flex-basis: calc(33.33% - 60px);
+
+        // flex-basis: calc(33.33% - 2%);
+
+        width: 45%; /* breakpoint */
+
+        min-width: 340px;
+      }
+
+      .tile-list a:nth-last-child(1):nth-child(3n + 1),
+      .tile-list a:nth-last-child(2):nth-child(3n + 1) {
+        margin-right: auto;
+      }
+    }
+
+    .tilepic {
+      border-radius: 15px;
+      margin-bottom: 40px;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
+        z-index: 1;
+      }
+
+      .title-content {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        z-index: 2;
+        color: white;
+
+        h3 {
+          font-weight: 700;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // Masquer les éléments après le 6ème
+    // .tile-list a:nth-child(n + 7) {
+    //   display: none;
+    // }
+  }
+}
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
@@ -617,7 +701,7 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Centrer le texte dans le conteneur */
+    text-align: center;
 
     h1 {
       font-weight: 700;
@@ -628,7 +712,7 @@ ul {
 
     h2 {
       font-size: 24px;
-      margin-top: 20px; /* Ajustement de la marge entre h1 et h2 */
+      margin-top: 20px;
       margin: 0 5%;
     }
 
