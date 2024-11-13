@@ -4,44 +4,35 @@ const Carousel = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % pictures.length);
+    setCurrentIndex(currentIndex === pictures.length - 1 ? 0 : currentIndex + 1);
   };
-
+  
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex(currentIndex === 0 ? pictures.length - 1 : currentIndex - 1);
   };
 
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
-        {/* Images */}
         {pictures.map((picture, index) => (
           <div
             key={index}
-            className={`carousel-slide ${
-              index === currentIndex ? "active" : ""
-            }`}
+            className={`carousel-slide ${index === currentIndex ? "active" : ""}`}
           >
-            <img
-              src={picture}
-              alt={`Slide ${index}`}
-              className="carousel-img"
-            />
+            <img src={picture} alt={`Slide ${index}`} className="carousel-img" />
           </div>
         ))}
       </div>
 
-      {/* Numérotation des images */}
-      <div className="carousel-counter">
-        {currentIndex + 1} / {pictures.length}
-      </div>
+      /* Numérotation */
+      {pictures.length > 1 && (
+        <div className="carousel-counter">
+          {currentIndex + 1} / {pictures.length}
+        </div>
+      )}
 
-      {/* Affiche les flèches seulement s'il y a plus d'une image */}
       {pictures.length > 1 && (
         <>
-          {/* Left Arrow */}
           <div id="left-arrow" className="arrows" onClick={prevSlide}>
             <svg
               width="96"
@@ -69,7 +60,6 @@ const Carousel = ({ pictures }) => {
             </svg>
           </div>
 
-          {/* Right Arrow */}
           <div id="right-arrow" className="arrows" onClick={nextSlide}>
             <svg
               width="96"
